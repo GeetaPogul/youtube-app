@@ -1,0 +1,58 @@
+html {
+  font-size: 10px;
+}
+
+.form-container {
+  margin: auto;
+  font-size: 2rem;
+  color: var(--bg-primary-color);
+  background-color: white;
+  width: max-content;
+  /* margin: auto; */
+  padding: 2.5rem;
+  line-height: 3.5rem;
+  border-radius: 0.5rem;
+}
+
+.m-top {
+  margin-top: 10rem;
+}
+
+.user-input span {
+  color: red;
+  font-weight: bold;
+}
+
+.user-input input {
+  /* background-color: blue; */
+  width: 40rem;
+}
+
+.btn-bar {
+  border: 2px solid var(--primary-text-color);
+  color: var(--bg-primary-color);
+  font-weight: bold;
+  width: 40rem;
+  height: 4rem;
+  font-size: 1.8rem;
+}
+
+.btn-bar:hover {
+  background-color: var(--primary-text-color);
+  color: var(--text-hover-color);
+}
+
+.create-acc-link {
+  color: var(--voilet-color);
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+.form-bottom-bar {
+  text-align: center;
+}
+
+/* ----------signup css ---------- */
+
+.m-top-2 {
+  margin-top: 4rem;
+}
