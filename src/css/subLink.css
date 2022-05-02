@@ -1,0 +1,91 @@
+@import url("../css/root.css");
+html {
+  font-size: 10px;
+}
+
+.slider {
+  text-align: center;
+  width: 15rem;
+  height: 100vh;
+  border-right: 0.05rem solid red;
+}
+
+.links {
+  color: var(--text-hover-color);
+  cursor: pointer;
+}
+
+
+.right-slider {
+  /* background-color: brown; */
+  max-width: 99rem;
+  margin-left:4rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 2rem;
+}
+
+#play {
+  /* background-color: white; */
+  background-color: transparent;
+  color: white;
+}
+
+.m-btm {
+  margin-bottom: 3rem;
+}
+
+.m-lft {
+  margin-left: 4rem;
+  /* background-color: red; */
+}
+
+.m-container {
+  margin: 3rem 2rem 1rem 6rem;
+}
+
+aside .side-links {
+  /* background-color: var(--primary-text-color); */
+  margin: .9rem;
+}
+
+@media only screen and (max-width: 980px){
+  .right-slider {
+    /* margin: 3rem 3rem 2rem 4rem; */
+    /* background-color: orange; */
+    max-width: 65rem;
+   
+  }
+}
+@media only screen and (max-width: 740px) {
+ 
+  .slider {
+    text-align: center;
+    font-size: 2rem;
+    width: 10rem;
+    height: 100vh;
+    border-right: 0.05rem solid red;
+  }
+  
+
+  .right-slider {
+    margin: 3rem 3rem 2rem 5rem;
+    /* background-color: white; */
+    max-width: 50rem;
+   
+  }
+  
+}
+
+@media only screen and (max-width: 500px) {
+  .right-slider{
+    /* background-color: pink; */
+    max-width: 40rem;
+    margin-left: 5rem;
+    margin-top: 2rem;
+  }
+}
+
