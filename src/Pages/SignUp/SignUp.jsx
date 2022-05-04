@@ -101,9 +101,8 @@ const SignUp = () => {
             <br /> <br />
           </div>
           <button className="btn-bar btn" disabled={disableButton}>
-            {" "}
-            Login{" "}
-          </button>{" "}
+            Login
+          </button>
           <br />
           <br />
           <hr />

@@ -17,11 +17,11 @@ const Navbar = () => {
     <>
       <nav className="home-navbar">
         <Link className="links logo" to="/">
-          <span className="sky-text">SKY</span>tube
+          <span className="logo_text">TypeCode</span>
         </Link>
 
         <Link className="links login-text padding-right-1" to="/login">
-          <button className="btn btn_primary">login </button>
+          <button className="btn btn_primary">Login </button>
         </Link>
       </nav>
       <div className="hr-line"></div>
@@ -31,12 +31,12 @@ const Navbar = () => {
         <Route path="/like" element={<Like />} />
         <Route path="/history" element={<History />} />
         <Route path="/watchlater" element={<WatchLater />} />
-        <Route path="/playlistpage" element={<PlaylistPage />} /> 
+        <Route path="/playlistpage" element={<PlaylistPage />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
 
-        <Route path="/video/:videoId" element={<VideoDetail /> } />
+        <Route path="/video/:videoId" element={<VideoDetail />} />
       </Routes>
     </>
   );

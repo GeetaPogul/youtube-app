@@ -16,7 +16,8 @@ const SubLinks = () => {
             <NavLink
               style={getActiveColor}
               className="nav-link links side-links"
-              to="/">
+              to="/"
+            >
               <div>
                 <i class="fa fa-home" aria-hidden="true"></i>
               </div>

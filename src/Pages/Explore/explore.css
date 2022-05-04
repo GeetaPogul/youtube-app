@@ -5,37 +5,19 @@ html {
   height: 33rem;
   width: 50rem;
 }
-.video_img{
-  height: 18rem;
-  width : 30rem;
+.video_img {
+  height: 16rem;
+  width: 30rem;
 }
 
-.video_content{
+.video_content {
   font-size: 1.5rem;
   max-width: 28rem;
-  color:white;
+  color: var(--text-hover-color);
 }
 
-/* style={{ border: "1px solid red", listStyle: "none", maxWidth:"30.2rem" }} */
-
-
-/* style={{backgroundColor :"pink",marginBottom: "2rem" , display:"flex", flexWrap: "wrap", gap:"3rem"}} */
-
-.video_container{
-  /* background-color: orange; */
-  margin-bottom: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap : 4.2rem;
-}
-.singleVideo{
-  border: 1px solid white;
-  list-style: none;
-  max-width: 30.2rem;
-}
-
-@media only screen and (max-width : 850px) {
-  .video_img{
+@media only screen and (max-width: 850px) {
+  .video_img {
     height: 15rem;
     width: 25rem;
   }

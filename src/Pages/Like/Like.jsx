@@ -2,6 +2,7 @@ import React from "react";
 import "../../css/subLink.css";
 import SubLinks from "../SubLinks";
 import { Link } from "react-router-dom";
+// import VideoDescription from "../VideoDetail/VideoDescription";
 
 const Like = () => {
   return (
@@ -12,10 +13,9 @@ const Like = () => {
         </div>
         <div className="right-slider">
           <div className="m-btm"> </div>
-          <div className="m-lft"> 
-          no liked video yet
-          <Link to="/explore">Watch more videos</Link>
-          
+          <div className="m-lft">
+            no liked video yet
+            <Link to="/explore">Watch more videos</Link>
           </div>
         </div>
       </div>

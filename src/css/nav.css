@@ -21,17 +21,22 @@ body {
   font-size: 2.2rem;
 }
 
-.sky-text {
-  color: var(--sec-text-color);
+.logo_text:hover {
+  color: var(--voilet-color);
   font-family: cursive;
 }
 
-.logo :hover {
+.logo_text {
+  margin-left: 3rem;
+  color: var(--primary-text-color);
+  font-family: cursive;
+}
+.logo_text:active {
   color: var(--text-hover-color);
+  font-family: cursive;
 }
 
 .logo {
-  color: var(--primary-text-color);
   font-weight: bold;
   font-size: 3rem;
 }
@@ -43,15 +48,6 @@ body {
   color: var(--text-hover-color);
 }
 
-Link {
-  color: var(--text-hover-color);
-}
-/* .nav {
-  background-color: grey;
-  font-size: 2.3rem;
-  color: "#00495";
-} */
-
 .padding-right-1 {
   padding-right: 3rem;
 }
@@ -61,12 +57,4 @@ Link {
   font-size: 2rem;
   padding: 0.4rem 2.2rem;
   color: var(--text-hover-color);
-}
-
-@media only screen and (max-width: 555px) {
-  html {
-    font-size: 0.5rem;
-    /* color: var(--text-hover-color); */
-    /* background-color: blueviolet; */
-  }
 }
