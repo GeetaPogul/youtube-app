@@ -1,0 +1,81 @@
+@import url("../css/root.css");
+html {
+  font-size: 10px;
+}
+
+.slider {
+  /* background-color: red; */
+  margin-top: 2rem;
+  text-align: center;
+  width: 16rem;
+  height: 100%;
+  border-right: 0.02rem solid var(--secondary-color);
+}
+
+.links {
+  color: var(--text-hover-color);
+  cursor: pointer;
+}
+
+.right-slider {
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: pink; */
+  max-width: 105rem;
+  margin-left: 5rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 2rem;
+}
+
+#play {
+  background-color: transparent;
+  color: var(--text-hover-color);
+}
+
+.m-btm {
+  margin-bottom: 3rem;
+}
+
+.m-lft {
+  margin-left: 4rem;
+  /* background-color: red; */
+}
+
+.m-container {
+  margin: 3rem 2rem 1rem 6rem;
+}
+
+aside .side-links {
+  margin: 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .right-slider {
+    max-width: 65rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .slider {
+    text-align: center;
+    font-size: 2rem;
+    width: 10rem;
+    height: 100vh;
+    border-right: 0.05rem solid var(--secondary-color);
+  }
+
+  .right-slider {
+    max-width: 30rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .right-slider {
+    max-width: 29rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+  }
+}
