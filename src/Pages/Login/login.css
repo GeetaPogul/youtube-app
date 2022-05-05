@@ -6,7 +6,7 @@ html {
   margin: auto;
   font-size: 2rem;
   color: var(--bg-primary-color);
-  background-color: white;
+  background-color: var(--text-hover-color);
   width: max-content;
   /* margin: auto; */
   padding: 2.5rem;
@@ -19,7 +19,7 @@ html {
 }
 
 .user-input span {
-  color: red;
+  color: var(--secondary-color);
   font-weight: bold;
 }
 

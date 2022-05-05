@@ -1,7 +1,13 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import LikedItem from "../../Components/LikedItem/LikedItem";
+import { useLikedVideo } from "../../Contexts/likevideo.context";
 import "../../css/video.css";
 
 const VideoDescription = ({ videoItem }) => {
+  const { likedVideoState, likedVideoDispatch } = useLikedVideo();
+
+  const { videoId } = useParams();
   console.log(videoItem.channel_img);
   return (
     <div>
@@ -9,7 +15,15 @@ const VideoDescription = ({ videoItem }) => {
       {
         <div className="text-container">
           <div className="btn_bar">
-            <button className="buttons icons" title="Add to like">
+            <button 
+            onClick={() =>
+              likedVideoDispatch({
+                type: "MOVE-TO-LIKE",
+                payload: videoItem,
+              })
+            }
+            
+            className="buttons icons" title="Add to like">
               <i class="fa fa-heart"></i>
             </button>
             <button className="buttons icons" title="Add to watchlater">
@@ -36,6 +50,30 @@ const VideoDescription = ({ videoItem }) => {
           </div>
         </div>
       }
+
+      {/* {likedVideoState.find((LikedItem) => LikedItem.id === videoId) ? (
+        <button
+          onClick={() =>
+            likedVideoDispatch({
+              type: "REMOVE-FROM-LIKE",
+              payloaod: videoItem,
+            })
+          }
+        >
+          Unlike
+        </button>
+      ) : (
+        <button
+          onClick={() =>
+            likedVideoDispatch({
+              type: "MOVE-TO-LIKE",
+              payload: videoItem,
+            })
+          }
+        >
+          Like
+        </button>
+      )} */}
     </div>
   );
 };

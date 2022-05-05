@@ -1,8 +1,8 @@
 import React from "react";
 import SubLinks from "../SubLinks";
 import "../Explore/explore.css";
-import { Link } from "react-router-dom";
-import { videos } from "../../backend/db/videos";
+// import { Link } from "react-router-dom";
+// import { videos } from "../../backend/db/videos";
 import VideoCard from "../VideoCard/VideoCard";
 
 const Explore = () => {
@@ -15,6 +15,7 @@ const Explore = () => {
         <div className="right-slider ">
           <br />
           <div className="video_container">
+            <h1> </h1>
             <VideoCard />
           </div>
         </div>

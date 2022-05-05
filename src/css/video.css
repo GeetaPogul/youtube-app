@@ -6,12 +6,11 @@ html {
   margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 3.5rem;
+  gap: 6rem;
 }
 .singleVideo {
   list-style: none;
   max-width: 31rem;
-  gap: 1rem;
 }
 
 .channel_badge {
@@ -27,24 +26,29 @@ html {
 }
 
 .title {
-  font-size: 2rem;
-  margin-top: 1.5rem;
-  margin-left: 2rem;
+  font-size: 2.1rem;
+  margin-top: 2.2rem;
+  margin-left: 1rem;
   color: var(--text-hover-color);
+  justify-content: space-between;
 }
 
+
+
+
 .title-content {
+  margin-top: 0.5rem;
   color: var(--text-hover-color);
-  font-size: 1.8rem;
+  font-size: 2.2rem;
 }
 
 .view-content {
   color: var(--text-hover-color);
-  font-size: 1.3rem;
+  font-size: 1.8rem;
 }
 
 .description-text {
-  padding: 0 0 0.5rem 1rem;
+  padding: 0 0 0.5rem 1.3rem;
   width: 30rem;
 }
 
@@ -56,14 +60,10 @@ html {
 .btn_bar {
   float: right;
   padding: 0 2rem 0 2rem;
-  /* background-color: pink; */
 }
 
-/* .full-video{
-  border: 1px solid var(--text-hover-color) ;
-} */
-
 .buttons {
+  color: var(--text-hover-color);
   background-color: var(--bg-primary-color);
   border-style: none;
 }
@@ -73,7 +73,6 @@ html {
 
 .description-content {
   font-size: 2rem;
-  /* background-color: pink; */
   width: 100rem;
   padding: 1rem 2rem 0.5rem 2rem;
 }
@@ -98,4 +97,13 @@ html {
   font-size: 2rem;
   padding: 0.8rem 2.5rem;
   color: var(--text-hover-color);
+}
+
+/* -----------liked video style ----------- */
+
+.like-icon{
+  font-size: 3rem;
+  color: var(--secondary-color);
+  justify-content: right;
+  margin-left: 3rem;
 }

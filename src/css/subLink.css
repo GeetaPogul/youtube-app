@@ -5,6 +5,7 @@ html {
 
 .slider {
   /* background-color: red; */
+  margin-top: 2rem;
   text-align: center;
   width: 16rem;
   height: 100%;
@@ -17,8 +18,11 @@ html {
 }
 
 .right-slider {
-  max-width: 99rem;
-  margin-left: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: pink; */
+  max-width: 105rem;
+  margin-left: 5rem;
 }
 
 .wrapper {
@@ -46,7 +50,7 @@ html {
 }
 
 aside .side-links {
-  margin: 0.9rem;
+  margin: 1rem;
 }
 
 @media only screen and (max-width: 1000px) {
