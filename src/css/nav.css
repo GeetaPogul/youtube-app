@@ -1,0 +1,60 @@
+@import url("../css/root.css");
+html {
+  font-size: 10px;
+}
+body {
+  background-color: var(--bg-primary-color);
+  color: var(--text-hover-color);
+}
+.home-navbar {
+  font-size: 2.5rem;
+  padding: 1.5rem;
+  text-decoration: none;
+}
+.hr-line {
+  height: 0.1rem;
+  background-color: var(--text-hover-color);
+}
+.login-text {
+  color: var(--text-hover-color);
+  float: right;
+  font-size: 2.2rem;
+}
+
+.logo_text:hover {
+  color: var(--voilet-color);
+  font-family: cursive;
+}
+
+.logo_text {
+  margin-left: 3rem;
+  color: var(--primary-text-color);
+  font-family: cursive;
+}
+.logo_text:active {
+  color: var(--text-hover-color);
+  font-family: cursive;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 3rem;
+}
+.links {
+  text-decoration: none;
+}
+
+.links:hover {
+  color: var(--text-hover-color);
+}
+
+.padding-right-1 {
+  padding-right: 3rem;
+}
+
+.btn_primary {
+  background-color: var(--primary-text-color);
+  font-size: 2rem;
+  padding: 0.4rem 2.2rem;
+  color: var(--text-hover-color);
+}
