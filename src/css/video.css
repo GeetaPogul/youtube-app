@@ -107,3 +107,12 @@ html {
   justify-content: right;
   margin-left: 3rem;
 }
+
+.watch-icon{
+  
+    font-size: 3rem;
+    /* color: var(--secondary-color); */
+    justify-content: right;
+    margin-left: 3rem;
+  
+}

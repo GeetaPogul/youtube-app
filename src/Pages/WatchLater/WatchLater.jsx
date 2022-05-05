@@ -1,6 +1,7 @@
 import React from "react";
 import SubLinks from "../SubLinks";
 import { Link } from "react-router-dom";
+import WatchItem from "../../Components/WatchItem/WatchItem";
 
 const WatchLater = () => {
   return (
@@ -10,10 +11,8 @@ const WatchLater = () => {
           <SubLinks />
         </div>
         <div className="right-slider">
-          <div className="m-btm"> </div>
-          <div className="m-lft">
-            no watchlater video yet
-            <Link to="/explore">Watch more videos</Link>
+          <div className="video_container">
+            <WatchItem />
           </div>
         </div>
       </div>

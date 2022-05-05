@@ -9,7 +9,7 @@ const LikedItem = () => {
       <div>
         <div>
           <br />
-          <h1> Liked Video's : {likedVideoState.length} </h1> <br />
+          <h1> Liked Video's : {likedVideoState.length} </h1> 
         </div>
 
         <div className="video_container">

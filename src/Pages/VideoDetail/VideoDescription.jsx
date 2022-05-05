@@ -2,11 +2,13 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import LikedItem from "../../Components/LikedItem/LikedItem";
 import { useLikedVideo } from "../../Contexts/likevideo.context";
+import { useWatchVideo } from "../../Contexts/watchLater.context";
 import "../../css/video.css";
 
 const VideoDescription = ({ videoItem }) => {
-  const { likedVideoState, likedVideoDispatch } = useLikedVideo();
+  const { likedVideoDispatch } = useLikedVideo();
 
+  const { watchVideoDispatch } = useWatchVideo();
   const { videoId } = useParams();
   console.log(videoItem.channel_img);
   return (
@@ -15,18 +17,26 @@ const VideoDescription = ({ videoItem }) => {
       {
         <div className="text-container">
           <div className="btn_bar">
-            <button 
+            <button
+              onClick={() =>
+                likedVideoDispatch({
+                  type: "MOVE-TO-LIKE",
+                  payload: videoItem,
+                })
+              }
+              className="buttons icons"
+              title="Add to like"
+            >
+              <i class="fa fa-heart"></i>
+            </button>
+            <button
             onClick={() =>
-              likedVideoDispatch({
-                type: "MOVE-TO-LIKE",
+              watchVideoDispatch({
+                type: "MOVE-TO-WATCHLATER",
                 payload: videoItem,
               })
             }
-            
-            className="buttons icons" title="Add to like">
-              <i class="fa fa-heart"></i>
-            </button>
-            <button className="buttons icons" title="Add to watchlater">
+            className="buttons icons" title="Add to watchlater">
               <i class="fa fa-clock-o"></i>
             </button>
             <button className="buttons icons" title="Add to playlist">
@@ -50,6 +60,19 @@ const VideoDescription = ({ videoItem }) => {
           </div>
         </div>
       }
+  {/* onClick={() =>
+          likedVideoDispatch({
+            type: "MOVE-TO-LIKE",
+            payload: videoItem,
+          })
+        } */}
+      <button
+        
+        className="buttons icons"
+        title="Add to like"
+      >
+        {/* <i class="fa fa-heart"></i> */} W
+      </button>
 
       {/* {likedVideoState.find((LikedItem) => LikedItem.id === videoId) ? (
         <button

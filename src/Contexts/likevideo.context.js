@@ -22,9 +22,12 @@ const LikedVideoProvider = ({ children }) => {
     []
   );
   return (
-    <LikedVideoContext.Provider value={{
-        likedVideoState,likedVideoDispatch 
-    }}>
+    <LikedVideoContext.Provider
+      value={{
+        likedVideoState,
+        likedVideoDispatch,
+      }}
+    >
       {children}
     </LikedVideoContext.Provider>
   );
