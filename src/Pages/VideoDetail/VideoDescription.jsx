@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import LikedItem from "../../Components/LikedItem/LikedItem";
 import { useLikedVideo } from "../../Contexts/likevideo.context";
+import { usePlaylist } from "../../Contexts/playlist.context";
 import { useWatchVideo } from "../../Contexts/watchLater.context";
 import "../../css/video.css";
 
@@ -9,6 +10,8 @@ const VideoDescription = ({ videoItem }) => {
   const { likedVideoDispatch } = useLikedVideo();
 
   const { watchVideoDispatch } = useWatchVideo();
+
+  const { playlistVideoDispatch } = usePlaylist();
   const { videoId } = useParams();
   console.log(videoItem.channel_img);
   return (
@@ -27,20 +30,31 @@ const VideoDescription = ({ videoItem }) => {
               className="buttons icons"
               title="Add to like"
             >
-              <i class="fa fa-heart"></i>
+              <i className="fa fa-heart"></i>
             </button>
             <button
-            onClick={() =>
-              watchVideoDispatch({
-                type: "MOVE-TO-WATCHLATER",
-                payload: videoItem,
-              })
-            }
-            className="buttons icons" title="Add to watchlater">
-              <i class="fa fa-clock-o"></i>
+              onClick={() =>
+                watchVideoDispatch({
+                  type: "MOVE-TO-WATCHLATER",
+                  payload: videoItem,
+                })
+              }
+              className="buttons icons"
+              title="Add to watchlater"
+            >
+              <i className="fa fa-clock-o"></i>
             </button>
-            <button className="buttons icons" title="Add to playlist">
-              <i class="fas fa-sliders-h"></i>
+            <button
+              onClick={() =>
+                playlistVideoDispatch({
+                  type: "MOVE-TO-PLAYLIST",
+                  payload: videoItem,
+                })
+              }
+              className="buttons icons"
+              title="Add to playlist"
+            >
+              <i className="fas fa-sliders-h"></i>
             </button>
           </div>
           <div className="description-content">
@@ -60,18 +74,14 @@ const VideoDescription = ({ videoItem }) => {
           </div>
         </div>
       }
-  {/* onClick={() =>
+      {/* onClick={() =>
           likedVideoDispatch({
             type: "MOVE-TO-LIKE",
             payload: videoItem,
           })
         } */}
-      <button
-        
-        className="buttons icons"
-        title="Add to like"
-      >
-        {/* <i class="fa fa-heart"></i> */} W
+      <button className="buttons icons" title="Add to like">
+        {/* <i className="fa fa-heart"></i> */} W
       </button>
 
       {/* {likedVideoState.find((LikedItem) => LikedItem.id === videoId) ? (

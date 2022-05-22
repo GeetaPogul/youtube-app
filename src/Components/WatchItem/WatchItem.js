@@ -13,7 +13,7 @@ const WatchItem = () => {
         <div className="video_container">
           {watchVideoState.map((watchVideo) => (
             <div className="video_container">
-              <li className="singleVideo">
+              <li className="singleVideo" key={watchVideo.video_id} >
                 <Link className="links" to={`/video/${watchVideo.video_id}`}>
                   <img className="video_img" src={watchVideo.video_img} alt="video-img" />
                 </Link>

@@ -33,6 +33,7 @@ const Home = () => {
         {trendingVideos.map(
           ({ video_id, video_img, channel_img, title, creator, views }) => {
             return (
+              <li className="singleVideo" key={video_id}> 
               <Link className="links" to={`/video/${video_id}`}>
                 <img className="video_img" src={video_img} alt="html" />
 
@@ -52,6 +53,7 @@ const Home = () => {
 
                 {/* <VideoCard /> */}
               </Link>
+              </li>
             );
           }
         )}
