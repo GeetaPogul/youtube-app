@@ -25,10 +25,11 @@ export default function VideoDetail() {
           <div className="m-top-4"> </div>
           <div className="full-video">
             <ReactPlayer
+            className="react-video-player"
               playing
               controls
-              width="1000px"
-              height="580px"
+              width="100%"
+              height="90%"
               url={`https://www.youtube.com/watch?v=${videoId}`}
             />{" "}
             <br />

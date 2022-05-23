@@ -19,7 +19,7 @@ const SubLinks = () => {
               to="/"
             >
               <div>
-                <i class="fa fa-home" aria-hidden="true"></i>
+                <i className="fa fa-home" aria-hidden="true"></i>
               </div>
               Home
             </NavLink>
@@ -32,7 +32,7 @@ const SubLinks = () => {
               to="/like"
             >
               <div>
-                <i class="fa fa-heart"></i>
+                <i className="fa fa-heart"></i>
               </div>
               Liked videos
             </NavLink>
@@ -45,7 +45,7 @@ const SubLinks = () => {
               to="/history"
             >
               <div>
-                <i class="fa fa-history"></i>
+                <i className="fa fa-history"></i>
               </div>
               History
             </NavLink>
@@ -58,7 +58,7 @@ const SubLinks = () => {
               to="/watchlater"
             >
               <div>
-                <i class="fa fa-clock-o"></i>
+                <i className="fa fa-clock-o"></i>
               </div>
               Watch Later
             </NavLink>
@@ -71,7 +71,7 @@ const SubLinks = () => {
               to="/playlistpage"
             >
               <div>
-                <i class="fas fa-sliders-h"></i>
+                <i className="fas fa-sliders-h"></i>
               </div>
               Playlist
             </NavLink>
