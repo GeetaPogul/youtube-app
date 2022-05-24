@@ -1,0 +1,70 @@
+html {
+  font-size: 10px;
+}
+
+.background_img {
+  height: 70vh;
+  width: 100%;
+}
+
+.img-container {
+  position: relative;
+}
+
+.explore_btn {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered-text {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered-text:hover {
+  color: var(--voilet-color);
+}
+
+.text-on-img h1 {
+  color: var(--primary-text-color);
+  font-size: 4rem;
+}
+
+.text-on-img span {
+  font-family: cursive;
+}
+
+.explore_btn:hover {
+  font-weight: bold;
+  color: var(--bg-primary-color);
+  background-color: var(--text-hover-color);
+  border: 1px solid var(--bg-primary-color);
+}
+
+.explore_btn {
+  font-size: 1.6rem;
+  padding: 0.7rem 2.8rem;
+  color: var(--text-hover-color);
+  background-color: var(--bg-primary-color);
+}
+.m-top-4 {
+  margin-top: 4rem;
+}
+
+.trending_videos {
+  margin: 2rem 4rem 2rem 14rem;
+}
+
+.trending-text {
+  font-size: 3rem;
+  margin-left: 3rem;
+}
+@media only screen and (max-width: 500px) {
+  .text-on-img h1 {
+    font-size: 2rem;
+  }
+}

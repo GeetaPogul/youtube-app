@@ -1,0 +1,118 @@
+html {
+  font-size: 10px;
+}
+
+.video_container {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6rem;
+}
+.singleVideo {
+  list-style: none;
+  max-width: 31rem;
+}
+
+.channel_badge {
+  margin-top: 1rem;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.img_title {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.1rem;
+  margin-top: 2.2rem;
+  margin-left: 1rem;
+  color: var(--text-hover-color);
+  justify-content: space-between;
+}
+
+
+
+
+.title-content {
+  margin-top: 0.5rem;
+  color: var(--text-hover-color);
+  font-size: 2.2rem;
+}
+
+.view-content {
+  color: var(--text-hover-color);
+  font-size: 1.8rem;
+}
+
+.description-text {
+  padding: 0 0 0.5rem 1.3rem;
+  width: 30rem;
+}
+
+.icons {
+  font-size: 2.5rem;
+  color: var(--text-hover-color);
+  padding: 0.5rem 2rem 0.5rem 2rem;
+}
+.btn_bar {
+  float: right;
+  padding: 0 2rem 0 2rem;
+}
+
+.buttons {
+  color: var(--text-hover-color);
+  background-color: var(--bg-primary-color);
+  border-style: none;
+}
+.text-container {
+  border: 0.01rem solid grey;
+}
+
+.description-content {
+  font-size: 2rem;
+  width: 100rem;
+  padding: 1rem 2rem 0.5rem 2rem;
+}
+
+.views-text {
+  font-size: 1.5rem;
+}
+
+.img-name-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.channel-img-name {
+  display: flex;
+}
+
+.sub-btn {
+  margin-right: 1rem;
+  border-radius: 0.3rem;
+  background-color: var(--primary-text-color);
+  font-size: 2rem;
+  padding: 0.8rem 2.5rem;
+  color: var(--text-hover-color);
+}
+
+/* -----------liked video style ----------- */
+
+.like-icon{
+  font-size: 3rem;
+  color: var(--secondary-color);
+  justify-content: right;
+  margin-left: 3rem;
+}
+
+.watch-icon{
+  
+    font-size: 3rem;
+    /* color: var(--secondary-color); */
+    justify-content: right;
+    margin-left: 3rem;
+  
+}
