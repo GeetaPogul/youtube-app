@@ -14,8 +14,8 @@ const LikedItem = () => {
 
         <div className="video_container">
           {likedVideoState.map((likedVideo) => (
-            <div className="video_container">
-              <li className="singleVideo" key={likedVideo.video_id}>
+            <div className="video_container" key={likedVideo.video_id}>
+              <li className="singleVideo" >
                 <Link className="links" to={`/video/${likedVideo.video_id}`}>
                   <img
                     className="video_img"

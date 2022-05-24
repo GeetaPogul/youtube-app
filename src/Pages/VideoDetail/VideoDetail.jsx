@@ -33,8 +33,8 @@ export default function VideoDetail() {
               url={`https://www.youtube.com/watch?v=${videoId}`}
             />{" "}
             <br />
-            <VideoDescription videoItem={videoItem} />
-            <Link to="/explore"> go to explore</Link>
+            <VideoDescription videoItem={videoItem}  />
+            <Link className="buttons links " to="/explore"> watch more... </Link>
             <hr />
           </div>
         </div>

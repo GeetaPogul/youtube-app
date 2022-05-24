@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import LikedItem from "../../Components/LikedItem/LikedItem";
+// import { toast } from "react-toastify";
+// import LikedItem from "../../Components/LikedItem/LikedItem";
 import { useLikedVideo } from "../../Contexts/likevideo.context";
 import { usePlaylist } from "../../Contexts/playlist.context";
 import { useWatchVideo } from "../../Contexts/watchLater.context";
 import "../../css/video.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { videos } from "../../backend/db/videos";
 
 const VideoDescription = ({ videoItem }) => {
-  const { likedVideoDispatch } = useLikedVideo();
+  const [isSubscribed, setIsubscribed] = useState(false);
+  const { likedVideoState, likedVideoDispatch } = useLikedVideo();
 
   const { watchVideoDispatch } = useWatchVideo();
 
   const { playlistVideoDispatch } = usePlaylist();
   const { videoId } = useParams();
   console.log(videoItem.channel_img);
+
+  // const likeToast = () => {
+  //   toast.warn("Liked Video");
+  // }
+
   return (
     <div>
       <h3></h3>
@@ -62,11 +72,16 @@ const VideoDescription = ({ videoItem }) => {
             <p className="views-text"> {videoItem.views} </p> <hr />
             <div className="img-name-div">
               <div className="channel-img-name">
-                <img src={videoItem.channel_img} alt="logo" />
+                {/* <img src={videoItem.channel_img} alt="logo" /> */}
                 <p> {videoItem.creator} </p>
               </div>
               <div>
-                <button className="buttons icons sub-btn "> Subscribe</button>
+                <button
+                  onClick={() => setIsubscribed((subscribe) => !subscribe)}
+                  className="buttons icons sub-btn"
+                >
+                  {isSubscribed ? "Unsubscribe" : "Subscribe"}
+                </button>
               </div>
             </div>
             <hr />
@@ -74,39 +89,7 @@ const VideoDescription = ({ videoItem }) => {
           </div>
         </div>
       }
-      {/* onClick={() =>
-          likedVideoDispatch({
-            type: "MOVE-TO-LIKE",
-            payload: videoItem,
-          })
-        } */}
-      <button className="buttons icons" title="Add to like">
-        {/* <i className="fa fa-heart"></i> */} W
-      </button>
-
-      {/* {likedVideoState.find((LikedItem) => LikedItem.id === videoId) ? (
-        <button
-          onClick={() =>
-            likedVideoDispatch({
-              type: "REMOVE-FROM-LIKE",
-              payloaod: videoItem,
-            })
-          }
-        >
-          Unlike
-        </button>
-      ) : (
-        <button
-          onClick={() =>
-            likedVideoDispatch({
-              type: "MOVE-TO-LIKE",
-              payload: videoItem,
-            })
-          }
-        >
-          Like
-        </button>
-      )} */}
+      <ToastContainer />
     </div>
   );
 };

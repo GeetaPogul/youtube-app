@@ -9,10 +9,24 @@ import History from "../History/History";
 import WatchLater from "../WatchLater/WatchLater";
 import PlaylistPage from "../Play/PlaylistPage";
 import VideoDetail from "../VideoDetail/VideoDetail";
-
+import "./navbar.css";
 import "../../css/nav.css";
+import { PrivateAuth } from "../../utils/PrivateAuth";
+import { RequireAuth } from "../../utils/RequireAuth";
+import { useAuthFunctions } from "../../Contexts/authContext/useAuthFunctions";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+import Mockman from "mockman-js";
 const Navbar = () => {
+  const token = localStorage.getItem("userToken");
+  const { logout } = useAuthFunctions();
+
+  const logoutHandler = () => {
+    toast.success(" adarsh balika Logout successful ", {
+      position: "bottom-left",
+    });
+  };
   return (
     <>
       <nav className="home-navbar">
@@ -20,24 +34,97 @@ const Navbar = () => {
           <span className="logo_text">TypeCode</span>
         </Link>
 
-        <Link className="links login-text padding-right-1" to="/login">
-          <button className="btn btn_primary">Login </button>
-        </Link>
+        {!token ? (
+          <span>
+            <Link to="/login" className="links login-text padding-right-1">
+              <button className="btn btn_primary"> Login </button>
+            </Link>{" "}
+          </span>
+        ) : (
+          <>
+            <button
+              onClick={logoutHandler && logout}
+              className="btn btn_primary login-text"
+            >
+              Logout{" "}
+            </button>
+          </>
+        )}
       </nav>
       <div className="hr-line"></div>
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/like" element={<Like />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/watchlater" element={<WatchLater />} />
-        <Route path="/playlistpage" element={<PlaylistPage />} />
+        <Route
+          path="/like"
+          element={
+            <RequireAuth>
+              {" "}
+              <Like />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/history"
+          element={
+            <RequireAuth>
+              {" "}
+              <History />{" "}
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/watchlater"
+          element={
+            <RequireAuth>
+              {" "}
+              <WatchLater />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/playlistpage"
+          element={
+            <RequireAuth>
+              {" "}
+              <PlaylistPage />
+            </RequireAuth>
+          }
+        />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/login"
+          element={
+            <PrivateAuth>
+              {" "}
+              <Login />{" "}
+            </PrivateAuth>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <PrivateAuth>
+              {" "}
+              <SignUp />
+            </PrivateAuth>
+          }
+        />
 
-        <Route path="/video/:videoId" element={<VideoDetail />} />
+        <Route
+          path="/video/:videoId"
+          element={
+            <RequireAuth>
+              {" "}
+              <VideoDetail />
+            </RequireAuth>
+          }
+        />
+
+        <Route path="/mock" element={<Mockman />} />
       </Routes>
+
+      <ToastContainer />
     </>
   );
 };

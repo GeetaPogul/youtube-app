@@ -1,7 +1,7 @@
 import React from "react";
 import "../../css/subLink.css";
 import SubLinks from "../SubLinks";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import LikedItem from "../../Components/LikedItem/LikedItem";
 
 const Like = () => {

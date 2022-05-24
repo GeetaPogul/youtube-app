@@ -1,36 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useAuth } from "../../Contexts/authContext/auth-context";
+import { useAuthFunctions } from "../../Contexts/authContext/useAuthFunctions";
 
 const SignUp = () => {
-  const [newPassword, setNewPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState(false);
 
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const { authState, authDispatch } = useAuth();
 
-  const [disableButton, setDisableButton] = useState(true);
+  const { signup } = useAuthFunctions();
 
-  const newPasswordHandler = (event) => {
-    const password = event.target.value;
-    checkPassword(password, confirmPassword);
-    setNewPassword(password);
+  const signupHandler = (event) => {
+    event.preventDefault();
+    signup;
   };
-
-  const confirmPasswordHandler = (event) => {
-    const confirmPassword = event.target.value;
-    checkPassword(confirmPassword, newPassword);
-    setConfirmPassword(confirmPassword);
-  };
-
-  function checkPassword(password1, password2) {
-    password1 === password2 && password1 !== "" && password2 !== ""
-      ? setDisableButton(false)
-      : setDisableButton(true);
-  }
   return (
     <>
       <div className="m-top-2"></div>
       <div className="form-container">
-        <form className="">
+        <form className="" onSubmit={signupHandler}>
           <div className="user-input">
             <label htmlFor="text">
               First Name <span>*</span>
@@ -39,24 +27,18 @@ const SignUp = () => {
             <input
               type="text"
               id="text"
+              name="name"
+              minLength="5"
               required
+              value={authState.name}
               autoComplete="off"
               placeholder=" John"
+              onChange={(event) =>
+                authDispatch({ type: "NAME", payload: event.target.value })
+              }
             />
           </div>
-          <div className="user-input">
-            <label htmlFor="text">
-              Last Name<span>*</span>
-            </label>
-            <br />
-            <input
-              type="text"
-              id="text"
-              required
-              autoComplete="off"
-              placeholder=" Doe"
-            />
-          </div>
+
           <div className="user-input">
             <label htmlFor="email">
               Email Address <span>*</span>
@@ -65,9 +47,14 @@ const SignUp = () => {
             <input
               type="email"
               id="email"
+              name="email"
               required
               autoComplete="off"
               placeholder=" johndoe@gmail.com"
+              value={authState.email}
+              onChange={(event) =>
+                authDispatch({ type: "EMAIL", payload: event.target.value })
+              }
             />
           </div>
           <div className="user-input">
@@ -78,31 +65,39 @@ const SignUp = () => {
             <input
               type="password"
               id="password"
-              onChange={newPasswordHandler}
+              name="password"
+              minLength="8"
+              value={authState.password}
               required
               autoComplete="off"
               placeholder=" ********"
+              onChange={(event) => ({
+                type: "PASSWORD",
+                payload: event.target.value,
+              })}
             />
             <br />
           </div>
           <div className="user-input">
-            <label htmlFor="password">
+            <label htmlFor="confirmpassword">
               Confirm Password <span>*</span>
             </label>
             <br />
             <input
               type="password"
-              id="password"
-              onChange={confirmPasswordHandler}
+              id="confirmpassword"
+              name="confirmpassword"
               required
               autoComplete="off"
               placeholder=" ********"
+              onFocus={() => setErrorMsg(false)}
             />
+            {errorMsg && (
+              <p> Confirm Password doesn't match with the password.</p>
+            )}
             <br /> <br />
           </div>
-          <button className="btn-bar btn" disabled={disableButton}>
-            Login
-          </button>
+          <button className="btn-bar btn">SignUp</button>
           <br />
           <br />
           <hr />
